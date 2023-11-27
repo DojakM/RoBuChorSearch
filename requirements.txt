@@ -1,6 +1,3 @@
 pandas
-pyvis
-networkx
 streamlit
-stvis
 openpyxl
