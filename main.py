@@ -8,9 +8,11 @@ def generateInterface():
 
 if __name__ == '__main__':
     noneCheck = st.file_uploader("Hierhin die Excel ziehen:", type=([".xlsx"]))
+    warn = st.text("")
     try:
-        load_files.load_excel(noneCheck)
+        file = load_files.load_excel(noneCheck)
     except:
-        st.text("Bitte gebe die richtige Exceltabelle ein")
+        warn.text("Bitte gebe die richtige Exceltabelle ein")
     if noneCheck is not None:
+        warn.text("")
         generateInterface()
