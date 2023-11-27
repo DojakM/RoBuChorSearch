@@ -1,11 +1,20 @@
 import pandas as pd
-from pyvis.network import Network
-import networkx as nx
 import streamlit as st
 import re
 from stvis import pv_static
 
-if __name__ == '__main__':
-    tk.Tk()
+import load_files
 
-    tk.mainloop()
+
+def generateInterface():
+    st.title("Rottenburg Posaunenchor")
+    st.dataframe()
+
+if __name__ == '__main__':
+    noneCheck = st.file_uploader("Hierhin die Excel ziehen:", type=([".xlsx"]))
+    try:
+        load_files.load_excel(noneCheck)
+    except:
+        st.text("Bitte gebe die richtige Exceltabelle ein")
+    if noneCheck is not None:
+        generateInterface()
