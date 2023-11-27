@@ -1,8 +1,4 @@
-import pandas as pd
 import streamlit as st
-import re
-from stvis import pv_static
-
 import load_files
 
 
