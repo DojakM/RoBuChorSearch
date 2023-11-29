@@ -1,9 +1,14 @@
 import streamlit as st
-import load_files
+import pandas as pd
+
+def load_standard():
+    df = pd.read_pickle("./df.pkl")
+    return df
+
 st.set_page_config(layout="wide")
 st.title("Liederliste")
 vz_list = ["6#","5#","4#","3#","2#","1#","0","1b","2b","3b","4b","5b","6b"]
-tabelle = load_files.load_standard()
+tabelle = load_standard()
 ros = st.sidebar.radio("Ansicht", ["Volle", "Mit Buch", "Ohne Buch"])
 filter_buch = st.sidebar.text_input("Buchsuche")
 filter_lied = st.sidebar.text_input("Liedersuche")
